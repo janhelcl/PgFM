@@ -3,15 +3,15 @@
 from pgfm.data.acquisition.tracklogs.models import (
     AircraftClass,
     SourceReference,
-    TrackPoint,
     Tracklog,
     TracklogMetadata,
+    TrackPoint,
 )
 
 __all__ = [
     "AircraftClass",
     "SourceReference",
-    "TrackPoint",
     "Tracklog",
     "TracklogMetadata",
+    "TrackPoint",
 ]

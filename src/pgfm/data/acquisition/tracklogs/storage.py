@@ -7,6 +7,7 @@ import json
 import os
 from dataclasses import asdict, dataclass
 from datetime import datetime
+from enum import Enum
 from pathlib import Path
 from typing import Protocol
 
@@ -32,8 +33,8 @@ class CanonicalTracklogStore(Protocol):
 def _json_default(value: object) -> object:
     if isinstance(value, datetime):
         return value.isoformat()
-    if hasattr(value, "value"):
-        return getattr(value, "value")
+    if isinstance(value, Enum):
+        return value.value
     raise TypeError(f"cannot JSON encode {type(value).__name__}")
 
 

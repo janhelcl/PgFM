@@ -10,8 +10,12 @@ from pgfm.data.acquisition.tracklogs.storage import (
     LocalRawArtifactStore,
 )
 
-
-IGC = b"""AXXX\nHFDTE010924\nB1200005000000N01400000EA0050000550\nB1201005000060N01400120EA0051000560\n"""
+IGC = (
+    b"AXXX\n"
+    b"HFDTE010924\n"
+    b"B1200005000000N01400000EA0050000550\n"
+    b"B1201005000060N01400120EA0051000560\n"
+)
 
 
 def test_local_pipeline_persists_raw_manifest_and_canonical_track(tmp_path: Path) -> None:

@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import StrEnum
-from typing import Mapping
 
 from pgfm.data.acquisition.models import AcquisitionMethod, RightsStatement, require_aware
 
@@ -85,7 +85,10 @@ class Tracklog:
             raise ValueError("a tracklog requires at least one source reference")
         if len(self.trajectory_sha256) != 64:
             raise ValueError("trajectory_sha256 must be a SHA-256 hex digest")
-        if any(a.timestamp > b.timestamp for a, b in zip(self.points, self.points[1:])):
+        if any(
+            a.timestamp > b.timestamp
+            for a, b in zip(self.points, self.points[1:], strict=False)
+        ):
             raise ValueError("track points must be ordered by timestamp")
 
     @property

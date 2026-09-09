@@ -1,8 +1,11 @@
 from pgfm.data.acquisition.tracklogs.fingerprint import raw_sha256, trajectory_sha256
 from pgfm.data.acquisition.tracklogs.igc import decode_igc
 
-
-BODY = b"HFDTE010924\nB1200005000000N01400000EA0050000550\nB1201005000060N01400120EA0051000560\n"
+BODY = (
+    b"HFDTE010924\n"
+    b"B1200005000000N01400000EA0050000550\n"
+    b"B1201005000060N01400120EA0051000560\n"
+)
 
 
 def test_header_changes_raw_hash_but_not_trajectory_hash() -> None:
