@@ -1,0 +1,1 @@
+"""Paragliding Foundation Model."""
