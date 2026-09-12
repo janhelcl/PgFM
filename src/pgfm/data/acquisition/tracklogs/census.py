@@ -35,7 +35,11 @@ def build_skylines_census(
         listed += 1
         downloadable += flight.igc_filename is not None
         aircraft[flight.aircraft_type or "unknown"] += 1
-        year = flight.score_date[:4] if flight.score_date and len(flight.score_date) >= 4 else "unknown"
+        year = (
+            flight.score_date[:4]
+            if flight.score_date and len(flight.score_date) >= 4
+            else "unknown"
+        )
         years[year] += 1
         countries[flight.takeoff_country or "unknown"] += 1
 
