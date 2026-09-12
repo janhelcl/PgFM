@@ -9,3 +9,4 @@ ADRs document decisions that constrain future PgFM work. They are append-only: w
 | [0003](0003-connectors-and-format-decoders.md) | Separate source connectors from file-format decoders | Accepted |
 | [0004](0004-rights-and-personal-data.md) | Store rights provenance and minimize personal data | Accepted |
 | [0005](0005-logical-model-before-physical-lake-format.md) | Stabilize the logical storage model before choosing the large-scale physical format | Accepted |
+| [0006](0006-rate-limited-resumable-connectors.md) | Make external acquisition resumable and polite by default | Accepted |
