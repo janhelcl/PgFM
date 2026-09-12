@@ -18,6 +18,9 @@ dev = [
   "ruff>=0.12",
 ]
 
+[project.scripts]
+pgfm-skylines-census = "pgfm.data.acquisition.tracklogs.census:main"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/pgfm"]
 
